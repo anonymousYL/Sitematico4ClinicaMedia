@@ -6,6 +6,7 @@ var usersCtrl = require("../controllers/user.controller");
 router.get("/", usersCtrl.getUsers);
 
 router.post(
+  "/",
   usersCtrl.createUser
 );
 
