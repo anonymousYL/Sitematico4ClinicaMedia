@@ -39,11 +39,9 @@ app.get("/", (req, res) => {
 });
 
 // Routes
-//app.use("/api/products", productRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/patient", patientRoutes);
 app.use("/api/appointment", appointmentRoutes);
-//app.use("/api/auth", authRoutes);
 
 
 module.exports = app;
