@@ -23,8 +23,6 @@ const createUser = async (req, res) => {
       F_CREACION: moment().format("YYYY-MM-DD HH:mm:ss"),
     });
 
-   console.log(user)
-
     // saving the new user
     const savedUser = await user.save();
 
