@@ -8,6 +8,10 @@ import { VerCitasComponent } from './ver-citas/ver-citas.component';
 import { TopmenuComponent } from './topmenu/topmenu.component';
 import { HomeComponent } from './home/home.component';
 import { AgendarCitasComponent } from './agendar-citas/agendar-citas.component';
+import { AgregarPacientesComponent } from './agregar-pacientes/agregar-pacientes.component';
+import { AgregarUsuariosComponent } from './agregar-usuarios/agregar-usuarios.component';
+import { VerUsuariosComponent } from './ver-usuarios/ver-usuarios.component';
+import { VerPacientesComponent } from './ver-pacientes/ver-pacientes.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { AgendarCitasComponent } from './agendar-citas/agendar-citas.component';
     VerCitasComponent,
     TopmenuComponent,
     HomeComponent,
-    AgendarCitasComponent
+    AgendarCitasComponent,
+    AgregarPacientesComponent,
+    AgregarUsuariosComponent,
+    VerUsuariosComponent,
+    VerPacientesComponent
   ],
   imports: [
     BrowserModule,
