@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const pkg = require('./package.json');
 const usersRoutes = require("./routes/user.routes");
 const patientRoutes = require("./routes/patient.routes");
+const appointmentRoutes = require("./routes/appointment.routes");
 const path = require('path');
 
 // Settings
@@ -41,6 +42,7 @@ app.get("/", (req, res) => {
 //app.use("/api/products", productRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/patient", patientRoutes);
+app.use("/api/appointment", appointmentRoutes);
 //app.use("/api/auth", authRoutes);
 
 

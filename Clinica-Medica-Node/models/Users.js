@@ -22,15 +22,15 @@ const userSchema = new Schema(
   }
 );
 
-userSchema.statics.encryptPassword = async (password) => {
+const encryptPassword = async (password) => {
   const salt = await bcrypt.genSalt(10);
   return await bcrypt.hash(password, salt);
 };
 
-userSchema.statics.comparePassword = async (password, receivedPassword) => {
+const comparePassword =async (password, receivedPassword) => {
   return await bcrypt.compare(password, receivedPassword)
 }
-
+module.exports = encryptPassword,comparePassword;
 module.exports = model("User", userSchema);
 
 
