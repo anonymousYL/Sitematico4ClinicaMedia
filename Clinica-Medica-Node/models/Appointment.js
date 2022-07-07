@@ -7,7 +7,7 @@ const appointmenttSchema = new Schema(
     NOM_PASIENTE: String,
     APE_PASIENTE: String,
     TEL_PASIENTE: String,
-    SEX_PASIENTE: String,
+    F_CITA: Date,
     F_CREACION: Date,
   },
   {
