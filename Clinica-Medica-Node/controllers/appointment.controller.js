@@ -24,7 +24,7 @@ const createAppointment = async (req, res) => {
       NOM_PASIENTE: savedAppointment.NOM_PACIENTE,
       APE_PASIENTE: savedAppointment.APE_PACIENTE,
       F_CITA: savedAppointment.F_CITA,
-      F_CREACION: savedAppointment.F_CREACION
+      F_CREACION:moment(savedAppointment.F_CREACION).format("YYYY-MM-DD")
     });
   } catch (error) {
     console.error(error);
