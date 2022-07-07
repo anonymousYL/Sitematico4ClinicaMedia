@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURI="mongodb://localhost/sistematicoClinicaDB"
+const mongoURI="mongodb://localhost/clinicaDB"
 
 mongoose.connect(mongoURI);
 
