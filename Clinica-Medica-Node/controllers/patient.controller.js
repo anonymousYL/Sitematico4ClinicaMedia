@@ -23,7 +23,7 @@ const createPatient = async (req, res) => {
       ID: savedPatient.ID_USUARIO,
       NOM_PASIENTE: savedPatient.NOM_PASIENTE,
       APE_PASIENTE: savedPatient.APE_PASIENTE,
-      F_CREACION: savedPatient.F_CREACION
+      F_CREACION: moment(savedPatient.F_CREACION).format("YYYY-MM-DD")
     });
   } catch (error) {
     console.error(error);
