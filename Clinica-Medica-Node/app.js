@@ -8,6 +8,7 @@ const usersRoutes = require("./routes/user.routes");
 const patientRoutes = require("./routes/patient.routes");
 const appointmentRoutes = require("./routes/appointment.routes");
 const path = require('path');
+var cors = require('cors');
 
 // Settings
 app.set("pkg", pkg);
@@ -21,12 +22,13 @@ app.set('views', path.join(__dirname, 'views'));
 //Middlewares
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
+//app.use(cors());
 
 // Middlewares
 const corsOptions = {
-  // origin: "http://localhost:3000",
+   origin: "http://localhost:4000",
 };
-//app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(helmet());
 //app.use(morgan("dev"));
 app.use(express.json());
