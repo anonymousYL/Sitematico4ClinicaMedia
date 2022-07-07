@@ -1,6 +1,9 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule  } from "@angular/forms"
+
+import { HttpClientModule } from '@angular/common/http'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
@@ -12,6 +15,8 @@ import { AgregarPacientesComponent } from './agregar-pacientes/agregar-pacientes
 import { AgregarUsuariosComponent } from './agregar-usuarios/agregar-usuarios.component';
 import { VerUsuariosComponent } from './ver-usuarios/ver-usuarios.component';
 import { VerPacientesComponent } from './ver-pacientes/ver-pacientes.component';
+
+import { PacientesService } from './pacientes.service'
 
 @NgModule({
   declarations: [
@@ -30,9 +35,10 @@ import { VerPacientesComponent } from './ver-pacientes/ver-pacientes.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PacientesService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

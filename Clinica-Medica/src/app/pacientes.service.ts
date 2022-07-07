@@ -13,6 +13,10 @@ export class PacientesService {
   }
 
   getPaciente() {
-    return this.httpClient.get<Paciente[]>()
+    return this.httpClient.get<Paciente[]>('http://localhost:4000/api/patient')
   }
+
+  // addPaciente() {
+  //   return this.httpClient.post<Paciente[]>('http://localhost:4000/api/patient', paciente)
+  // }
 }

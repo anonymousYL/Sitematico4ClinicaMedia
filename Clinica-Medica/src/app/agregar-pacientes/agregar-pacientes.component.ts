@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-agregar-pacientes',
   templateUrl: './agregar-pacientes.component.html',

@@ -1,6 +1,6 @@
 export class Paciente {
-    "nom_pasiente": string;
-    "ape_pasiente": string;
-    "tel_pasiente": string;
-    "sex_pasiente": string;
+    "NOM_PASIENTE": string;
+    "APE_PASIENTE": string;
+    "TEL_PASIENTE": string;
+    "SEX_PASIENTE": string;
 }
