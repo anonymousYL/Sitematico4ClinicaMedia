@@ -24,7 +24,6 @@ export class AgregarUsuariosComponent implements OnInit {
       email: ['', Validators.required],
       estado: ['', Validators.required],
       sexo: ['', Validators.required],
-      date: ['', Validators.required],
       telefono: ['', Validators.required]
     })
     this.id = this.aRoute.snapshot.paramMap.get('id');

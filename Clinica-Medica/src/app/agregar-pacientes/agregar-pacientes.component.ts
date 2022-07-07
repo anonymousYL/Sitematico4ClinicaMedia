@@ -20,7 +20,6 @@ export class AgregarPacientesComponent implements OnInit {
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
       sexo: ['', Validators.required],
-      date: ['', Validators.required],
       telefono: ['', Validators.required]
     })
     this.id = this.aRoute.snapshot.paramMap.get('id');
