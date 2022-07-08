@@ -3,28 +3,25 @@
         <div class="col-lg-6 offset-lg-3">
             <div class="custom-form card text-center">
                 <div class="card-body">
-                    <h3 style="color: #080f5d;">AGENDAR CITA
-                        <div *ngIf="loading" class="spinner-border float-end" role="status">
-                            <span class="sr-only">Loading...</span>
-                          </div>
-                    </h3>
-                    <span *ngIf="submitted && agendarCita.invalid" class="badge bg-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
-                    <form class="mt-4" [formGroup]="agendarCita">
+                    <h3 style="color: #080f5d;">AGENDAR CITA</h3>
+                    <form class="mt-4" [formGroup]="createCita" (ngSubmit)="agregarCita()">
                         <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control form-control-lg" 
-                                    formControlName="nombre" placeholder="Nombre Paciente">
+                                    formControlName="nom_paciente" placeholder="Nombre Paciente">
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control form-control-lg" 
-                                    formControlName="apellido" placeholder="Apellido Paciente">
+                                    formControlName="ape_paciente" placeholder="Apellido Paciente">
                             </div>
                         </div>
                         <input type="text" class="form-control form-control-lg mt-3" maxlength="20"
-                            formControlName="telefono" placeholder="Teléfono">
+                            formControlName="tel_paciente" placeholder="Teléfono">
+                        <input type="text" class="form-control form-control-lg mt-3" maxlength="20"
+                            formControlName="nom_doctor" placeholder="Nombre Doctor">
 
                         <input type="date" class="form-control form-control-lg mt-3" 
-                        formControlName="date">
+                        formControlName="f_cita">
                         
                         <div class="mt-3">
                             <button type="text" class="btn btn-secondary btn-lg" style="margin-right: 4px;" routerLink="/ver-citas">Volver</button>

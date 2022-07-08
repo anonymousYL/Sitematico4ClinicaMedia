@@ -11,16 +11,18 @@
               <th>Nombre</th>
               <th>Apellido</th>
               <th>Teléfono</th>
+              <th>Doctor</th>
               <th>Fecha de la cita</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>nombre</td>
-              <td>apellido</td>
-              <td>87869064</td>
-              <td>09/07/2022</td>
+            <tr *ngFor="let cita of citas">
+              <td>{{cita.NOM_PACIENTE}}</td>
+              <td>{{cita.APE_PACIENTE}}</td>
+              <td>{{cita.TEL_PACIENTE}}</td>
+              <td>{{cita.NOM_DOCTOR}}</td>
+              <td>{{cita.F_CITA | date: 'dd/MM/YYYY'}}</td> 
               <td>
                 <i class="fas fa-edit fa-lg text-primary" style="margin-right: 5px;"></i>
                 <!-- [routerLink]="['/editEmpleado/', empleado.id]" -->

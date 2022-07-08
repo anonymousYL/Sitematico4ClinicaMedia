@@ -14,10 +14,10 @@ export class CitasService {
   }
 
   getCita() {
-    return this.httpClient.get<Cita[]>('http://localhost:4000/api/patient')
+    return this.httpClient.get<Cita[]>('http://localhost:4000/api/appointment')
   }
 
   addCita(cita: Cita) {
-    return this.httpClient.post<Cita[]>('http://localhost:4000/api/patient', cita)
+    return this.httpClient.post<Cita[]>('http://localhost:4000/api/appointment', cita)
   }
 }

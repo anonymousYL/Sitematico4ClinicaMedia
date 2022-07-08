@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
+import { CitasService } from '../citas.service';
 
 @Component({
   selector: 'app-agendar-citas',
@@ -8,24 +10,39 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./agendar-citas.component.css']
 })
 export class AgendarCitasComponent implements OnInit {
-  agendarCita: FormGroup;
-  submitted = false;
-  loading = false;
-  id: string | null;
 
-  constructor(private fb: FormBuilder,
-    private aRoute: ActivatedRoute) {
-    this.agendarCita = this.fb.group({
-      nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
-      date: ['', Validators.required],
-      telefono: ['', Validators.required]
+  createCita: FormGroup;
+  constructor(private fb: FormBuilder,private router: Router,private citasService: CitasService) { 
+    this.createCita = this.fb.group({
+      nom_paciente: ['', Validators.required],
+      ape_paciente: ['', Validators.required],
+      tel_paciente: ['', Validators.required],
+      nom_doctor: ['', Validators.required],
+      f_cita: ['', Validators.required]
     })
-    this.id = this.aRoute.snapshot.paramMap.get('id');
-    console.log(this.id)
+  }
+  
+  ngOnInit(): void {
+
   }
 
-  ngOnInit(): void {
+  agregarCita() {
+    const cita: any = {
+      nom_paciente: this.createCita.value.nom_paciente,
+      ape_paciente: this.createCita.value.ape_paciente,
+      tel_paciente: this.createCita.value.tel_paciente,
+      nom_doctor: this.createCita.value.nom_doctor,
+      f_cita: this.createCita.value.f_cita
+    }
+
+    try {
+      this.citasService.addCita(cita).subscribe(() => {
+    
+        this.router.navigate(['/ver-citas'])
+      })
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 }

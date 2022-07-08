@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CitasService } from '../citas.service';
+
+import { Cita } from '../Citas';
+
 @Component({
   selector: 'app-ver-citas',
   templateUrl: './ver-citas.component.html',
@@ -7,7 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerCitasComponent implements OnInit {
 
-  constructor() { }
+  citas:Cita[] = [];
+
+  constructor(private citasService:CitasService) {
+    this.citasService.getCita().subscribe( data=> {
+      this.citas = data;
+    })
+  }
 
   ngOnInit(): void {
   }
