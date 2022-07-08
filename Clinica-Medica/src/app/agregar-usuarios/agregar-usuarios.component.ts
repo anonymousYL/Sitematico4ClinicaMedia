@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
+import { UsuariosService } from '../usuarios.service';
 
 @Component({
   selector: 'app-agregar-usuarios',
@@ -9,28 +11,42 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AgregarUsuariosComponent implements OnInit {
 
-  agregarUsuario: FormGroup;
-  submitted = false;
-  loading = false;
-  id: string | null;
-
-  constructor(private fb: FormBuilder,
-    private aRoute: ActivatedRoute) {
-    this.agregarUsuario = this.fb.group({
-      usuario: ['', Validators.required],
-      pass: ['', Validators.required],
-      nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
+  createUsuario: FormGroup;
+  constructor(private fb: FormBuilder,private router: Router,private usuariosService: UsuariosService) { 
+    this.createUsuario = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      nom_usuario: ['', Validators.required],
+      ape_usuario: ['', Validators.required],
       email: ['', Validators.required],
-      estado: ['', Validators.required],
-      sexo: ['', Validators.required],
-      telefono: ['', Validators.required]
+      tel_contacto: ['', Validators.required],
+      sex_usuario: ['', Validators.required]
     })
-    this.id = this.aRoute.snapshot.paramMap.get('id');
-    console.log(this.id)
+  }
+  
+  ngOnInit(): void {
+
   }
 
-  ngOnInit(): void {
+  agregarUsuario() {
+    const usuario: any = {
+      username: this.createUsuario.value.username,
+      password: this.createUsuario.value.password,
+      nom_usuario: this.createUsuario.value.nom_usuario,
+      ape_usuario: this.createUsuario.value.ape_usuario,
+      email: this.createUsuario.value.email,
+      tel_contacto: this.createUsuario.value.tel_contacto,
+      sex_usuario: this.createUsuario.value.sex_usuario,
+    }
+
+    try {
+      this.usuariosService.addUsuario(usuario).subscribe(() => {
+    
+        this.router.navigate(['/ver-usuarios'])
+      })
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 }

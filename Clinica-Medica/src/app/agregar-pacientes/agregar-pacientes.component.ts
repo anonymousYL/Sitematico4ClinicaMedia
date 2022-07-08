@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
 
 import { PacientesService } from '../pacientes.service';
-
-import { Paciente } from '../Paciente';
 
 @Component({
   selector: 'app-agregar-pacientes',
