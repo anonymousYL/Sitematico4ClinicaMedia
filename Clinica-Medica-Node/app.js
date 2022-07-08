@@ -25,10 +25,11 @@ app.use(express.json());
 //app.use(cors());
 
 // Middlewares
-const corsOptions = {
-   origin: "http://localhost:4000",
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//    origin: "http://localhost:4000",
+// };
+
+app.use(cors());
 app.use(helmet());
 //app.use(morgan("dev"));
 app.use(express.json());
