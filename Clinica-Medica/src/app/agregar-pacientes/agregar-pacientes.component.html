@@ -4,32 +4,32 @@
             <div class="custom-form card text-center">
                 <div class="card-body">
                     <h3 style="color: #080f5d;">AGREGAR PACIENTES
-                        <div *ngIf="loading" class="spinner-border float-end" role="status">
+                        <div class="spinner-border float-end" role="status">
                             <span class="sr-only">Loading...</span>
                           </div>
                     </h3>
-                    <span *ngIf="submitted && agregarPaciente.invalid" class="badge bg-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
-                    <form class="mt-4" [formGroup]="agregarPaciente">
+                    <span class="badge bg-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+                    <form class="mt-4" [formGroup]="createPaciente" (ngSubmit)="agregarPaciente()">
                         <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control form-control-lg" 
-                                    formControlName="nombre" placeholder="Nombre Paciente">
+                                    formControlName="nombre" placeholder="nombre">
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control form-control-lg" 
-                                    formControlName="apellido" placeholder="Apellido Paciente">
+                                    formControlName="apellido" placeholder="apellido">
                             </div>
                         </div>
 
                         <input type="text" class="form-control form-control-lg mt-3" 
-                                    formControlName="sexo" placeholder="Sexo Paciente">
+                                    formControlName="sexo" placeholder="sexo">
 
                         <input type="text" class="form-control form-control-lg mt-3" maxlength="20"
-                            formControlName="telefono" placeholder="Teléfono">
+                            formControlName="telefono" placeholder="telefono">
 
                         <div class="mt-3">
                             <button type="text" class="btn btn-secondary btn-lg" style="margin-right: 4px;" routerLink="/ver-pacientes">Volver</button>
-                            <button type="submit" class="btn btn-dark btn-lg" routerLink="/ver-pacientes">Guardar</button>
+                            <button type="submit" class="btn btn-dark btn-lg">Guardar</button>
                         </div>
                     </form>
                 </div>

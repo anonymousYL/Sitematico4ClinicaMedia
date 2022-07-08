@@ -16,7 +16,7 @@ export class PacientesService {
     return this.httpClient.get<Paciente[]>('http://localhost:4000/api/patient')
   }
 
-  // addPaciente() {
-  //   return this.httpClient.post<Paciente[]>('http://localhost:4000/api/patient', paciente)
-  // }
+  addPaciente(paciente: Paciente) {
+    return this.httpClient.post<Paciente[]>('http://localhost:4000/api/patient', paciente)
+  }
 }

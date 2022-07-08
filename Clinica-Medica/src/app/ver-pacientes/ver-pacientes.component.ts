@@ -11,9 +11,7 @@ import { Paciente } from '../Paciente';
 })
 export class VerPacientesComponent implements OnInit {
 
-
   pacientes:Paciente[] = [];
-
 
   constructor(private pacienteService:PacientesService) {
     this.pacienteService.getPaciente().subscribe( data=> {
