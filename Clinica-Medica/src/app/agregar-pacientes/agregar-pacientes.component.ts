@@ -35,11 +35,12 @@ export class AgregarPacientesComponent implements OnInit {
 
     try {
       this.pacientesService.addPaciente(paciente).subscribe(() => {
-    
-        this.router.navigate(['/ver-pacientes'])
+        window.alert('Ingresado con exito');
+        this.router.navigate(['/ver-pacientes']);
       })
     } catch (error) {
-      console.log(error);
+      window.alert(error);
+      console.log(error );
     }
   }
 }

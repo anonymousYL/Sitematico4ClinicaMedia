@@ -41,8 +41,8 @@ export class AgregarUsuariosComponent implements OnInit {
 
     try {
       this.usuariosService.addUsuario(usuario).subscribe(() => {
-    
-        this.router.navigate(['/ver-usuarios'])
+        window.alert('Ingresado con exito');
+        this.router.navigate(['/ver-usuarios']);
       })
     } catch (error) {
       console.log(error);

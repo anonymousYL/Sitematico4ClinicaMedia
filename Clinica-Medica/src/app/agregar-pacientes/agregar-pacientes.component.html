@@ -16,10 +16,13 @@
                             </div>
                         </div>
 
-                        <input type="text" class="form-control form-control-lg mt-3" 
-                                    formControlName="sexo" placeholder="sexo">
-
-                        <input type="text" class="form-control form-control-lg mt-3" maxlength="20"
+                        <select name="sexo" class="form-control form-control-lg mt-3" formControlName="sexo">
+                            <option value="null" selected disabled >Sexo</option>
+                            <option value="SEX-F">Femenino</option>
+                            <option value="SEX-M">Masculino</option>
+                        </select>
+                        
+                        <input type="text" class="form-control form-control-lg mt-3" maxlength="8"
                             formControlName="telefono" placeholder="telefono">
 
                         <div class="mt-3">

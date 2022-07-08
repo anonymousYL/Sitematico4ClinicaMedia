@@ -25,14 +25,17 @@
                                     formControlName="ape_usuario" placeholder="Apellido Usuario">
                             </div>
                         </div>
-                        
-                        <input type="text" class="form-control form-control-lg mt-3" maxlength="20"
-                        formControlName="sex_usuario" placeholder="Sexo">
+        
+                        <select name="sexo" class="form-control form-control-lg mt-3" formControlName="sex_usuario">
+                            <option value="null" selected disabled>Sexo</option>
+                            <option value="SEX-F">Femenino</option>
+                            <option value="SEX-M">Masculino</option>
+                        </select>
 
                         <input type="text" class="form-control form-control-lg mt-3" maxlength="20"
                             formControlName="email" placeholder="Email">
 
-                        <input type="text" class="form-control form-control-lg mt-3" maxlength="20"
+                        <input type="text" class="form-control form-control-lg mt-3" maxlength="8"
                             formControlName="tel_contacto" placeholder="Teléfono">
                             
                         <div class="mt-3">

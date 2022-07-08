@@ -37,8 +37,8 @@ export class AgendarCitasComponent implements OnInit {
 
     try {
       this.citasService.addCita(cita).subscribe(() => {
-    
-        this.router.navigate(['/ver-citas'])
+        window.alert('Ingresado con exito');
+        this.router.navigate(['/ver-citas']);
       })
     } catch (error) {
       console.log(error);
